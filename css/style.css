@@ -19,3 +19,7 @@ form {
 table {
     border: 1px solid red;
 }
+
+.text-bold {
+    font-weight: bold;
+}
