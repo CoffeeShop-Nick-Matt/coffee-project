@@ -33,7 +33,18 @@ function updateCoffees(e) {
 //---   Personal COde
 var searchName = document.getElementById("coffeeName"); // Grab search bar
 
+function searchTypeName(e){
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    const value = searchName.value.toLowerCase();
+    var newListCoffee = [];
 
+    for(var i = 0;i<coffees.length;i++){
+        if(coffees[i].name.toLowerCase().includes(value)){
+            newListCoffee.push(coffees[i])
+            tbody.innerHTML = renderCoffees(newListCoffee);
+        }
+    }
+}
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
