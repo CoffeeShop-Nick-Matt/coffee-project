@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-inline-flex col-6">';
+    var html = '<div class="coffee d-inline-flex col-5">';
     // html += '<td>' + coffee.id + '</td>'; this is done to hide id
     html += '<h3 class="">' + coffee.name + '</h3>';
-    html += '<p class="text-secondary mt-0">' + coffee.roast + '</p>';
+    html += '<p class="text-secondary pt-2">' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
