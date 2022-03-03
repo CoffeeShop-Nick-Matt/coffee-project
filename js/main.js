@@ -73,3 +73,23 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+
+var CoffeeType = document.getElementById('roast-selection-2')
+var CoffeeName = document.getElementById('addCoffeeName');
+var submitButton2 = document.querySelector('#submit-2');
+
+function addButton(e){
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    var valueCoffeeType = CoffeeType.value;
+    var valueCoffeeName = CoffeeName.value;
+    var wow = coffees.length + 1
+    coffees.push(valueCoffeeName)
+    console.log(valueCoffeeName)
+    console.log(valueCoffeeType)
+    tbody.innerHTML = renderCoffees(coffees.push(valueCoffeeName));
+}
+
+submitButton2.addEventListener('click', addButton);
+
