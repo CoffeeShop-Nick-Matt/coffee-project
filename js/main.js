@@ -1,11 +1,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
+    var html = '<div class="coffee d-inline-flex col-6">';
     // html += '<td>' + coffee.id + '</td>'; this is done to hide id
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    html += '<h3 class="">' + coffee.name + '</h3>';
+    html += '<p class="text-secondary mt-0">' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -45,6 +45,7 @@ function searchTypeName(e){
         }
     }
 }
+searchName.addEventListener("input", searchTypeName);
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
