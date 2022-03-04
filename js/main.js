@@ -3,7 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee d-inline-flex col-5">';
     // html += '<td>' + coffee.id + '</td>'; this is done to hide id
-    html += '<h3 class="">' + coffee.name + '</h3>';
+    html += '<h3 class="text-capatalize">' + coffee.name + '</h3>';
     html += '<p class="text-secondary pt-2">' + coffee.roast + '</p>';
     html += '</div>';
 
@@ -84,11 +84,19 @@ function addButton(e){
     e.preventDefault(); // don't submit the form, we just want to update the data
     var valueCoffeeType = CoffeeType.value;
     var valueCoffeeName = CoffeeName.value;
-    var wow = coffees.length + 1
-    coffees.push(valueCoffeeName)
-    console.log(valueCoffeeName)
-    console.log(valueCoffeeType)
-    tbody.innerHTML = renderCoffees(coffees.push(valueCoffeeName));
+    var wow = coffees.length + 1;
+    // coffees.push(valueCoffeeName)
+    console.log(wow, valueCoffeeName, valueCoffeeType)
+    // console.log(valueCoffeeType)
+    // console.log(wow);
+    // coffees.addToObject(wow, valueCoffeeName, valueCoffeeType);
+    let newCOffee = {
+        id: wow,
+        name: valueCoffeeName.charAt(0).toUpperCase() + valueCoffeeName.slice(1),
+        roast:valueCoffeeType
+    }
+    coffees.push(newCOffee);
+    tbody.innerHTML = renderCoffees(coffees);
 }
 
 submitButton2.addEventListener('click', addButton);
