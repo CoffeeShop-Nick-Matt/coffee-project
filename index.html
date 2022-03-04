@@ -8,53 +8,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body class="bgcolor">
-    <header class="bg-light shadow m-5 ">
-        <h1 class="text-center">Coffee!</h1>
-    </header>
-    <hr>
 
-    <div class="container d-flex">
-        <aside id="bg-left" class="d-flex">
+    <header class="bg-light shadow m-5 d-flex justify-content-center flex-column rounded-circle position-absolute end-0">
+        <img class="mx-auto pt-3" src="img/logo.png" alt="coffee logo">
+        <h1 class="text-center">Coffee!</h1>
+        <div>
+            <p class="text-center pb-5">
+                Welcome To Our Coffee Shop
+            </p>
+        </div>
+    </header>
+
+    <div id="coffeeImg">
+
+    </div>
+
+    <div class="container d-flex justify-content-around">
+        <form class="">
+            <h4 class="text-center mt-3">Search coffee</h4>
+            <hr class="w-75 mx-auto mb-3">
+            <label for="roast-selection" class="text-bold">Roast</label>
+            <select class="form-select" id="roast-selection" aria-label="Default select example">
+                <option value="All">All</option>
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
+
+            <div class="form-group">
+                <label for="coffeeName" class="text-bold">Coffee Name</label>
+                <input type="text" class="form-control" id="coffeeName" aria-describedby="coffeesName">
+
+            </div>
+            <input class="w-100 mt-3 text-white text-uppercase" id="submit" type="submit"/>
+        </form>
+
+        <form class="">
+            <h4 class="text-center mt-3">Add a coffee</h4>
+            <hr class="w-75 mx-auto mb-3">
+
+
+            <label for="roast-selection-2" class="text-bold">Roast</label>
+            <select class="form-select" id="roast-selection-2" aria-label="Default select example">
+                <option value="All">All</option>
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
+
+            <div class="form-group">
+                <label for="addCoffeeName" class="text-bold">Name</label>
+                <input type="text" class="form-control" id="addCoffeeName" aria-describedby="addCoffeeName">
+                <input class="w-100  mt-3 text-white text-uppercase" id="submit-2" type="submit"/>
+            </div>
+        </form>
+    </div>
+
+        <aside id="bg-left" class=" w-75 container-fluid d-flex mt-5 mx-auto">
             <table class="col-12">
                 <tbody id="coffees"></tbody>
             </table>
         </aside>
 
-
-    <form class="col-4">
-        <label for="roast-selection" class="text-bold">Roast</label>
-        <select class="form-select" id="roast-selection" aria-label="Default select example">
-            <option value="All">All</option>
-            <option value="light">light</option>
-            <option value="medium">medium</option>
-            <option value="dark">dark</option>
-        </select>
-
-        <div class="form-group">
-            <label for="coffeeName" class="text-bold">Coffee Name</label>
-            <input type="text" class="form-control" id="coffeeName" aria-describedby="coffeesName">
-
+    <footer class="footer bg-black p-3 position-fixed bottom-0 w-100">
+        <div class="container text-center">
+            <span class="text-white">&#xA9; <a href="https://github.com/HeyGilly" class="text-decoration-none text-white">Gilly</a> & <a href="https://github.com/MDMartinez2120" class="text-decoration-none text-white">Matt</a></span>
         </div>
-        <input class="w-100 mt-3 bg-primary text-white" id="submit" type="submit"/>
-        <hr>
-        <h4 class="text-center mt-3">Add a coffee</h4>
+    </footer>
 
-
-        <label for="roast-selection-2" class="text-bold">Roast</label>
-        <select class="form-select" id="roast-selection-2" aria-label="Default select example">
-            <option value="All">All</option>
-            <option value="light">light</option>
-            <option value="medium">medium</option>
-            <option value="dark">dark</option>
-        </select>
-
-        <div class="form-group">
-            <label for="addCoffeeName" class="text-bold">Name</label>
-            <input type="text" class="form-control" id="addCoffeeName" aria-describedby="addCoffeeName">
-            <input class="w-100  mt-3 bg-primary text-white" id="submit-2" type="submit"/>
-        </div>
-    </form>
-    </div>
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

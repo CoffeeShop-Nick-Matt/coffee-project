@@ -3,7 +3,7 @@
 //--- this allows html to be written in js
 //    header-3 and paragraph of the name and roast is placed here
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-inline-flex flex-column flex-lg-row col-12 col-lg-6 ">';
+    var html = '<div class="coffee d-inline-flex flex-column flex-lg-row col-12 col-lg-6 justify-content-center">';
     // html += '<td>' + coffee.id + '</td>';                                        Hides the ID in the DOM
     html += '<h3 class="text-capatalize ">' + coffee.name + '</h3>';
     html += '<p class="text-secondary pt-2">' + coffee.roast + '</p>';
