@@ -2,10 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;0,800;1,800&family=Lora:wght@400;500;600&display=swap');
 
 *{margin:0;Padding:0}
-    body{box-sizing: border-box;
-    padding-bottom: 120px;
-
-}
+body{box-sizing: border-box;padding-bottom: 120px;}
 
 .bgcolor {
     background: radial-gradient(circle, rgba(161,126,108,1) 0%, rgba(134,114,92,1) 57%, rgba(27,8,1,1) 100%);
