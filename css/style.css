@@ -43,6 +43,7 @@ form{
     background-color: rgba(232, 209, 131);
     padding: 3em;
     border-radius: 30px;
+    box-shadow: -10px 10px 0 #1e1e1e;
 }
 #bg-left{
     background-color: rgba(232, 209, 131);
@@ -50,4 +51,5 @@ form{
     border-radius: 30px;
     padding: 3em;
     margin-right: 2em;
+    box-shadow: -10px 10px 0 #1e1e1e;
 }
