@@ -3,9 +3,9 @@
 //--- this allows html to be written in js
 //    header-3 and paragraph of the name and roast is placed here
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-inline-flex col-5">';
+    var html = '<div class="coffee d-inline-flex flex-column flex-lg-row col-12 col-lg-6 ">';
     // html += '<td>' + coffee.id + '</td>';                                        Hides the ID in the DOM
-    html += '<h3 class="text-capatalize">' + coffee.name + '</h3>';
+    html += '<h3 class="text-capatalize ">' + coffee.name + '</h3>';
     html += '<p class="text-secondary pt-2">' + coffee.roast + '</p>';
     html += '</div>';
     return html;
@@ -22,26 +22,31 @@ function renderCoffees(coffees) {
 
 //---   captures the value of the input for drop down for searching by roast.
 //      then adds it to a new object to display the selected few.
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
+        if (coffee.roast === selectedRoast) {  //This checks to see if the value is matching the coffee roast in the object.
             filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-//---   Personal COde
-var searchName = document.getElementById("coffeeName"); // Grab search bar
+//---   TEAM WORK Code
 
+
+var searchName = document.getElementById("coffeeName"); // Grab search bar in the DOM
+
+//--    captures the value of input for searchName (l-41)
+//      and just like the previous function (l-26) we created a new object to keep track of the new updated list
+//      running a for loop through each coffee name and check to see if coffeeName includes the value input (l-48).
 function searchTypeName(e){
     e.preventDefault(); // don't submit the form, we just want to update the data
     const value = searchName.value.toLowerCase();
     var newListCoffee = [];
-
     for(var i = 0;i<coffees.length;i++){
         if(coffees[i].name.toLowerCase().includes(value)){
             newListCoffee.push(coffees[i])
@@ -49,6 +54,7 @@ function searchTypeName(e){
         }
     }
 }
+//---
 searchName.addEventListener("input", searchTypeName);
 
 
