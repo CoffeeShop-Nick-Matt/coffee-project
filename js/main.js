@@ -1,15 +1,17 @@
 "use strict"
 
+//--- this allows html to be written in js
+//    header-3 and paragraph of the name and roast is placed here
 function renderCoffee(coffee) {
     var html = '<div class="coffee d-inline-flex col-5">';
-    // html += '<td>' + coffee.id + '</td>'; this is done to hide id
+    // html += '<td>' + coffee.id + '</td>';                                        Hides the ID in the DOM
     html += '<h3 class="text-capatalize">' + coffee.name + '</h3>';
     html += '<p class="text-secondary pt-2">' + coffee.roast + '</p>';
     html += '</div>';
-
     return html;
 }
 
+//--- runs through the list of coffee
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -18,6 +20,8 @@ function renderCoffees(coffees) {
     return html;
 }
 
+//---   captures the value of the input for drop down for searching by roast.
+//      then adds it to a new object to display the selected few.
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -85,17 +89,13 @@ function addButton(e){
     var valueCoffeeType = CoffeeType.value;
     var valueCoffeeName = CoffeeName.value;
     var wow = coffees.length + 1;
-    // coffees.push(valueCoffeeName)
     console.log(wow, valueCoffeeName, valueCoffeeType)
-    // console.log(valueCoffeeType)
-    // console.log(wow);
-    // coffees.addToObject(wow, valueCoffeeName, valueCoffeeType);
-    let newCOffee = {
+    let newCoffee = {
         id: wow,
         name: valueCoffeeName.charAt(0).toUpperCase() + valueCoffeeName.slice(1),
         roast:valueCoffeeType
     }
-    coffees.push(newCOffee);
+    coffees.push(newCoffee);
     tbody.innerHTML = renderCoffees(coffees);
 }
 
