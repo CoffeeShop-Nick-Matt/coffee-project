@@ -25,7 +25,6 @@ function renderCoffees(coffees) {
 
 //---   captures the value of the input for drop down for searching by roast.
 //      then adds it to a new object to display the selected few.
-
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -37,13 +36,10 @@ function updateCoffees(e) {
         }else if ('All' === selectedRoast){
            return tbody.innerHTML = renderCoffees(coffees);
         }
-
     });
 }
 
 //---   TEAM WORK Code
-
-
 var searchName = document.getElementById("coffeeName"); // Grab search bar in the DOM
 
 //--    captures the value of input for searchName (l-41)
