@@ -103,7 +103,13 @@ function addButton(e){
         name: valueCoffeeName.charAt(0).toUpperCase() + valueCoffeeName.slice(1),
         roast:valueCoffeeType
     }
-    coffees.push(newCoffee);
+    //This tells us if they leave a empty space then an alert will be issued, if not empty then push to newcoffees
+    if(valueCoffeeName ===''){
+        alert('Please put a name of coffee!')
+    }else{
+        coffees.push(newCoffee);
+    }
+
     tbody.innerHTML = renderCoffees(coffees);
 }
 
