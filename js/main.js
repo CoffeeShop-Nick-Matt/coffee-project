@@ -3,13 +3,16 @@
 //--- this allows html to be written in js
 //    header-3 and paragraph of the name and roast is placed here
 function renderCoffee(coffee) {
-    var html = '<div class="coffee d-inline-flex flex-column flex-lg-row col-12 col-lg-6 justify-content-center">';
+    var html = '<div class="d-inline-flex flex-row col-4">';
     // html += '<td>' + coffee.id + '</td>';                                        Hides the ID in the DOM
-    html += '<h3 class="text-capatalize ">' + coffee.name + '</h3>';
-    html += '<p class="text-secondary pt-2">' + coffee.roast + '</p>';
+    html += '<h3 class="text-capatalize">' + coffee.name + '</h3>';
+    html += '<p class="text-secondary  p-2">' + coffee.roast + '</p>';
     html += '</div>';
     return html;
 }
+
+
+// d-inline-flex flex-column flex-lg-row col-12 col-lg-6 justify-content-center
 
 //--- runs through the list of coffee
 function renderCoffees(coffees) {
@@ -30,9 +33,12 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {  //This checks to see if the value is matching the coffee roast in the object.
             filteredCoffees.push(coffee);
+             return tbody.innerHTML = renderCoffees(filteredCoffees);
+        }else if ('All' === selectedRoast){
+           return tbody.innerHTML = renderCoffees(coffees);
         }
+
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 //---   TEAM WORK Code
