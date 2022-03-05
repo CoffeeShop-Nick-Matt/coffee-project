@@ -18,8 +18,8 @@ header{
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; /* Resize the background image to cover the entire container */
-
 }
+
 header div{width: 260px; height: auto;}
 img{height: 100px;width: 100px;}
 
@@ -68,3 +68,31 @@ input[type="submit"]:hover{
 a{color: white;transition: font-size 1s, color 1.5s;}
 a:hover{font-size: 1.3em;color: red;font-weight: 700;}
 
+
+
+/*----- Animation -----*/
+#logos{
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+}
+#form-left{
+        animation-name: fadeIn;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+}
+#form-right{
+        animation-name: fadeIn;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+}
+aside{
+        animation-name: fadeIn;
+        animation-duration: 7s;
+        animation-timing-function: ease-in-out;
+}
+/*Animation for logo*/
+@keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+}
